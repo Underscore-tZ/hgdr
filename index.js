@@ -128,7 +128,7 @@ function demonWhateverThing() {
 function updateResultsUgly(lvl) {
   let elem = document.getElementById("results");
   if (lvl == null) {
-    elem.innerText = "fuck try again (maybe with less bad filters)";
+    elem.innerText = "try again (maybe with less bad filters)";
   } else {
     elem.innerText = "";
     elem.innerText += "Name: " + lvl["name"] + "\n";
