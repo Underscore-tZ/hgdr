@@ -61,10 +61,10 @@ async function makeRequest() {
           continue;
         }
 
-        if (filters["version"] == 1 && !(["pre-1.7", "1.7", "1.8"].includes(level["gameVersion"]))) {
+        if (filters["version"] == 1 && level["id"] > 2808696) {
           level = null;
           continue;
-        } else if (filters["version"] == 2 && !(level["gameVersion"] == "2.0")) {
+        } else if (filters["version"] == 2 && !(11045512 < level["id"] && level["id"] < 28360554)) {
           level = null;
           continue;
         }
