@@ -4,7 +4,7 @@ let filters = {
   "diff": -2,
   "demon-filter": 0,
   "unfeatured-only": true,
-  "old-only": false,
+  "version": 0,
 }
 
 function genSearchUrl(options) {
@@ -40,7 +40,7 @@ async function makeRequest() {
   for (let failsafe = 0; failsafe < 10; failsafe++) {
     options["page"] = Math.floor(Math.random() * (results / 10));
 
-    const advanced_filters = filters["unfeatured-only"] || filters["old-only"];
+    const advanced_filters = filters["unfeatured-only"] || filters["old"] != 0;
     response = await fetch(genSearchUrl(options)).then(r => r.json());
     console.log(response);
 
@@ -61,7 +61,10 @@ async function makeRequest() {
           continue;
         }
 
-        if (filters["old-only"] == true && level["id"] >= 2808696) {
+        if (filters["version"] == 1 && !(["pre-1.7", "1.7", "1.8"].includes(level["gameVersion"]))) {
+          level = null;
+          continue;
+        } else if (filters["version"] == 2 && !(level["gameVersion"] == "2.0")) {
           level = null;
           continue;
         }
@@ -99,10 +102,17 @@ function updateFilters() {
     "insane": 4,
     "extreme": 5
   };
+
+  // enums? what are those ???
+  const version_key = {
+    "none": 0,
+    "pre-19": 1,
+    "only-20": 2,
+  };
   filters["diff"] = diff_key[document.getElementById("diff").value];
+  filters["version"] = version_key[document.getElementById("version").value];
   filters["demon-filter"] = demon_key[document.getElementById("demon-filter").value];
   filters["unfeatured-only"] = document.getElementById("unfeatured-only").checked;
-  filters["old-only"] = document.getElementById("old-only").checked;
 }
 
 function demonWhateverThing() {

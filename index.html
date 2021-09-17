@@ -10,8 +10,12 @@
   <label for="unfeatured-only">Unfeatured only</label>
   <input type="checkbox" id="unfeatured-only" name="unfeatured-only" checked>
   <br>
-  <label for="old-only">Old only</label>
-  <input type="checkbox" id="old-only" name="old-only">
+  <label for="version">Version</label>
+  <select id="version" name="version">
+    <option value="none">None</option>
+    <option value="pre-19">Pre-1.9</option>
+    <option value="only-20">2.0 Only</option>
+  </select>
   <br>
   <label for="diff">Difficulty</label>
   <select id="diff" name="diff" onchange=demonWhateverThing()>
