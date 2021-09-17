@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+  <script src="index.js"></script>
+</head>
+<body>
+  <h1>Hot Garbage Demon Roulette</h1>
+  <h3>I made this website in like 3 minutes</h3>
+  <h5>also pls dont spam or else colon will be sad</h5>
+
+  <label for="unfeatured-only">Unfeatured only</label>
+  <input type="checkbox" id="unfeatured-only" name="unfeatured-only" checked>
+  <br>
+  <label for="old-only">Old only</label>
+  <input type="checkbox" id="old-only" name="old-only">
+  <br>
+  <label for="diff">Difficulty</label>
+  <select id="diff" name="diff" onchange=demonWhateverThing()>
+    <option value="auto">Auto</option>
+    <option value="easy">Easy</option>
+    <option value="normal">Normal</option>
+    <option value="hard">Hard</option>
+    <option value="harder">Harder</option>
+    <option value="insane">Insane</option>
+    <option value="demon" selected="selected">Demon</option>
+  </select>
+  <br>
+  <label for="demon-filter">Demon filter</label>
+  <select id="demon-filter" name="demon-filter">
+    <option value="easy">None</option>
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+    <option value="insane">Insane</option>
+    <option value="insane">Extreme</option>
+  </select>
+  <br>
+  <button type="button" onclick=hereWeGo()>Go</button>
+  <pre id="results">
+this is where the results go
+  </pre>
+
+  
+</body>
