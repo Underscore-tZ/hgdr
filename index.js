@@ -89,7 +89,7 @@ function updateFilters() {
     "hard": 3,
     "harder": 4,
     "insane": 5,
-    "demon": 6,
+    "demon": -2,
   };
   const demon_key = {
     "none": 0,
