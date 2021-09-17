@@ -123,7 +123,7 @@ function updateResultsUgly(lvl) {
     elem.innerText = "";
     elem.innerText += "Name: " + lvl["name"] + "\n";
     elem.innerText += "By: " + lvl["author"] + "\n";
-    elem.innerText += "ID: " + lvl["id"];
+    elem.innerHTML += "ID: <a target='_blank' target='_blank' rel='noopener noreferrer' href='https://gdbrowser.com/" + lvl["id"] + "'>" + lvl["id"] + "</a>";
   }
 }
 
