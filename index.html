@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
   <script src="index.js"></script>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <h1>Hot Garbage Demon Roulette</h1>
   <h3>I made this website in like 3 minutes</h3>
-  <h5>also pls dont spam or else colon will be sad</h5>
+  <h5>also pls dont spam or else <a href="https://gdbrowser.com/u/colon">colon</a> will be sad</h5>
+  <h5>mediocre CSS by <a href="https://github.com/mrmesserschmit">The Leader</a></h5>
 
   <label for="unfeatured-only">Unfeatured only</label>
   <input type="checkbox" id="unfeatured-only" name="unfeatured-only" checked>
@@ -39,9 +41,7 @@
   </select>
   <br>
   <button type="button" onclick=hereWeGo()>Go</button>
-  <pre id="results">
-this is where the results go
-  </pre>
-
-  
+  <div class="results"> 
+    <pre id="results"></pre>
+  </div>
 </body>
